@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+
+<h1>MY NOTION</h1>
+<br>
+<h5>Bạn có thể chọn note muốn xem bên dưới !!!</h5>
+<br>
+<form method="POST">
+	<select name="text" class="form-select">
+		<option value="http://localhost:80/note1">NOTE 1</option>
+		<option value="http://localhost:80/note2">NOTE 2</option>
+		<option value="http://localhost:80/note3">NOTE 3</option>
+		<option value="http://localhost:80/note4">NOTE 4</option>
+	</select>
+	<div class="d-grid gap-2 col-6 mx-auto mt-4">
+		<button type="submit" class="btn btn-outline-success">VIEW NOTE</button>
+	</div>
+</form>
+
+{% endblock %}

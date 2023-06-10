@@ -1,0 +1,50 @@
+<style>
+  body {
+    background-image: url('{{ bg_path }}');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+  }
+  .accordion-heading {
+    color: black; 
+    transition: color 0.3s ease; 
+    cursor: pointer
+  }
+
+  .accordion-heading:hover {
+    color: limegreen;
+  }
+  </style>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>{{ title }}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  </head>
+  <body>
+    <body>
+
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+          <div class="container">
+              <img src="{{ logo_path }}" alt="logo" width="50" height="50">
+              <div class="collapse navbar-collapse" id="navbarNav">
+                  <ul class="navbar-nav ml-auto">
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('home') }}">Home</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('about') }}">About</a>
+                      </li>
+                      <li class="nav-item">
+                          <a class="nav-link" href="{{ url_for('contact') }}">Contact</a>
+                      </li>
+                  </ul>
+              </div>
+          </div>
+      </nav>
+      <div class="container mt-4">
+          {% block content %}{% endblock %}
+      </div>
+  </body>
+</html>
